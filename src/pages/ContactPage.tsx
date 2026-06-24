@@ -61,7 +61,7 @@ const ContactPage: React.FC = () => {
                   allowFullScreen={true} 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full grayscale invert opacity-75 hover:opacity-100 transition-opacity duration-500 contrast-125"
+                  className="w-full h-full"
                 ></iframe>
               </div>
             </motion.div>
