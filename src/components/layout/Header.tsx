@@ -28,14 +28,8 @@ const Header: React.FC = () => {
     >
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-brand-cyan/30 rounded-lg blur-md group-hover:bg-brand-cyan/50 transition-all duration-300" />
-            <Shield className="relative h-8 w-8 text-brand-cyan drop-shadow-[0_0_8px_rgba(0,245,255,0.8)]" />
-          </div>
-          <span className="text-xl font-display font-bold tracking-wider text-white">
-            ROBLOC<span className="text-brand-cyan">K</span>SEC
-          </span>
+        <Link to="/" className="flex items-center group">
+          <img src="/RoBlockSec-01.png" alt="RoBlockSec Logo" className="h-9 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}

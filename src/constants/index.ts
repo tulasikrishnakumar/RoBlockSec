@@ -1,9 +1,10 @@
-import { ShieldCheck, Smartphone, Globe, BrainCircuit, Bot, FileCheck, Search, Server, Users, GraduationCap, Target, Shield, HeartHandshake, Lightbulb, Code, ShieldQuestion, Briefcase, Building, Eye, BarChart, FileText, LifeBuoy, BookOpen, CheckSquare } from 'lucide-react';
+import { ShieldCheck, Smartphone, Globe, BrainCircuit, Bot, FileCheck, Search, Server, Users, GraduationCap, Target, Shield, HeartHandshake, Lightbulb, Code, ShieldQuestion, Briefcase, Building, Eye, LifeBuoy } from 'lucide-react';
 
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
   { href: '/about', key: 'about', label: 'About' },
   { href: '/services', key: 'services', label: 'Services' },
+  { href: '/products', key: 'products', label: 'Products' },
   { href: '/blog', key: 'blog', label: 'Insights' },
   { href: '/team', key: 'team', label: 'Team' },
   // { href: '/contact', key: 'contact', label: 'Contact' },
@@ -64,7 +65,7 @@ export const ALL_SERVICES = [
 export const STATS = [
     { value: 500, label: 'Penetration Tests', suffix: '+' },
     { value: 99, label: 'Client Trust', suffix: '%' },
-    { value: 24, label: 'Monitoring', prefix: '24/7' },
+    { value: 7, label: 'Monitoring', prefix: '24/' },
     { value: 10, label: 'Years of Expertise', suffix: '+' },
 ];
 
@@ -78,6 +79,8 @@ export const CORE_VALUES = [
 export const TIMELINE_MILESTONES = [
     { year: '2024', event: 'Roblocksec Founded' },
     { year: '2025', event: 'Launched 24/7 SOC Services' },
+    { year: '2026', event: 'Launching Data Rakshak & BreachSimu', link: 'https://datarakshak.in/' },
+    { year: '2026', event: 'Launched CTF & Bug Bounty Platform' },
 ];
 
 export const DEMO_CASE_STUDIES = [
@@ -88,62 +91,76 @@ export const DEMO_CASE_STUDIES = [
 ];
 
 export const DEMO_TEAM = [
-    { name: 'Roshan kappala', role: 'Founder and CEO ', image: 'roshan.png', specialization: 'AI in Cybersecurity' },
-    { name: 'Ahmed Misbahuddin', role: 'Product Development Lead', image: 'ahmed.png', specialization: 'Secure Web & Mobile App Development' },
-    { name: 'kenny pothuraju', role: 'Blue Team Lead', image: 'https://media.licdn.com/dms/image/v2/D5603AQGZOMLljgcA4A/profile-displayphoto-crop_800_800/B56ZkFr4wOHUAI-/0/1756737015854?e=1762992000&v=beta&t=Y0ay4DskdtTh-UPNfi8a2jfuvZzDLWbae638kvNSkjY', specialization: 'Threat Intelligence & IR' },
-    { name: 'Godugu Sai Charan', role: 'Red Team Lead', image: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', specialization: 'Compliance & Risk Frameworks' },
+    { name: 'Roshan kappala', role: 'Founder and CEO ', image: 'roshan.png', specialization: 'AI in Cybersecurity', category: 'founding' },
+    { name: 'Ahmed Misbahuddin', role: 'Product Development Lead', image: 'ahmed.png', specialization: 'Secure Web & Mobile App Development', category: 'founding' },
+    { name: 'kenny pothuraju', role: 'Blue Team Lead', image: 'https://media.licdn.com/dms/image/v2/D5603AQGZOMLljgcA4A/profile-displayphoto-crop_800_800/B56ZkFr4wOHUAI-/0/1756737015854?e=1762992000&v=beta&t=Y0ay4DskdtTh-UPNfi8a2jfuvZzDLWbae638kvNSkjY', specialization: 'Threat Intelligence & IR', category: 'founding' },
+    { name: 'Godugu Sai Charan', role: 'Red Team Lead', image: '/godugu.png', specialization: 'Compliance & Risk Frameworks', category: 'new' },
 ];
 
 export const DEMO_BLOG_POSTS = [
     { 
       title: 'The Rise of AI in Phishing Attacks: A Deep Dive', 
       category: 'Threat Intelligence', 
-      image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/800x600/0d1117/8957e5?text=AI+Phishing',
+      image: '/blog-ai-phishing.png',
       excerpt: 'Threat actors are now leveraging generative AI to create highly convincing phishing emails at scale. We break down the techniques and show you how to adapt your defenses.',
       date: 'October 26, 2025' 
     },
     { 
       title: 'Zero-Day Exploit: Deconstructing the "LogForge" Vulnerability', 
       category: 'Red Teaming', 
-      image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/800x600/0d1117/00ffff?text=Zero-Day',
+      image: '/blog-zero-day.png',
       excerpt: 'Our research team discovered a critical zero-day vulnerability in a popular logging library. This is the technical breakdown of our findings and the responsible disclosure process.',
       date: 'October 15, 2025' 
     },
     { 
       title: 'Building a Resilient Security Culture: A CISO\'s Guide', 
       category: 'GRC Updates', 
-      image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/800x600/0d1117/238636?text=Security+Culture',
+      image: '/blog-security-culture.png',
       excerpt: 'Beyond technology, your people are your greatest asset. This guide provides actionable steps for CISOs to foster a proactive and resilient security culture across the organization.',
       date: 'September 30, 2025' 
     },
     { 
-      title: 'Quantum Computing & Cryptography: Preparing for a Post-Quantum World', 
+      title: 'Post-Quantum Cryptography: Protecting Data for the Next Decade', 
       category: 'Cyber Trends', 
-      image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/800x600/0d1117/1f6feb?text=Quantum',
-      excerpt: 'The quantum threat to modern cryptography is real. We explore the timeline, the risks, and the steps organizations should be taking now to prepare for post-quantum cryptography.',
-      date: 'September 18, 2025' 
+      image: '/blog-quantum.png',
+      excerpt: 'The quantum threat to modern cryptography is real. We explore the timeline, the risks, and the steps organizations should be taking now to prepare.',
+      date: 'November 12, 2025' 
+    },
+    { 
+      title: 'Introducing Data Rakshak: The Future of Data Privacy', 
+      category: 'Product Updates', 
+      image: '/blog-data-rakshak.png',
+      excerpt: 'We are proud to announce the launch of Data Rakshak, our comprehensive platform for data protection and regulatory compliance.',
+      date: 'November 05, 2025' 
+    },
+    {
+      title: 'Launching Our CTF & Bug Bounty Platform: Hunt, Hack, Win',
+      category: 'Product Updates',
+      image: '/blog-ctf.png',
+      excerpt: 'RoBlockSec is proud to launch its own CTF (Capture The Flag) & Bug Bounty platform in 2026 — a competitive arena for security researchers, students, and professionals to sharpen skills, discover real vulnerabilities, and earn rewards.',
+      date: 'January 15, 2026'
     },
 ];
 
 export const DEMO_CAREERS = [
     { 
-        title: 'Senior Penetration Tester', 
+        title: 'Penetration Testing Consultant', 
         location: 'Remote', 
-        type: 'Internship', 
-        description: 'As a Senior Penetration Tester, you will lead complex red team engagements, simulate advanced adversaries, and help our clients identify and mitigate critical vulnerabilities in their applications and networks.',
+        type: 'Full-time', 
+        description: 'As a Penetration Testing Consultant, you will lead complex red team engagements, simulate advanced adversaries, and help our clients identify and mitigate critical vulnerabilities in their applications and networks.',
         requirements: ['5+ years in offensive security', 'Expertise in web, mobile, and network VAPT', 'Proficiency in scripting (Python, PowerShell)', 'OSCP, OSCE, or equivalent certification preferred'] 
     },
     { 
-        title: 'SOC Analyst (Tier 2)', 
+        title: 'Security Operations Consultant', 
         location: 'Remote', 
-        type: 'Internship', 
+        type: 'Full-time', 
         description: 'Join our 24/7 Security Operations Center to investigate and respond to complex security alerts. You will serve as an escalation point, perform threat hunting, and contribute to the continuous improvement of our detection capabilities.',
         requirements: ['3+ years in a SOC environment', 'Strong understanding of SIEM, EDR, and network analysis tools', 'Experience with incident response procedures', 'GIAC certifications (GCIH, GCFA) are a plus'] 
     },
     { 
         title: 'Cybersecurity GRC Consultant', 
         location: 'Remote', 
-        type: 'Internship', 
+        type: 'Full-time', 
         description: 'Help our clients build and mature their security programs by providing expert guidance on governance, risk management, and compliance. You will conduct risk assessments, develop security policies, and prepare clients for audits.',
         requirements: ['4+ years in GRC consulting', 'Deep knowledge of frameworks like ISO 27001, NIST, and PCI DSS', 'Excellent communication and client-facing skills', 'CISA, CISM, or CRISC certification highly desirable'] 
     },
@@ -211,5 +228,7 @@ export const COMPLIANCE_LOGOS = [
     { name: 'GDPR', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=GDPR' },
     { name: 'HIPAA', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=HIPAA' },
     { name: 'PCI DSS', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=PCI+DSS' },
+    { name: 'DPDPA 2023', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=DPDPA+2023' },
+    { name: 'DPDPA 2025', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=DPDPA+2025' },
     { name: 'SOC 2', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=SOC+2' },
 ];

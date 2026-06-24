@@ -39,7 +39,7 @@ const RedTeamingPage: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
         >
-          {service.subServices?.map((sub, index) => (
+          {service.subServices?.map((sub) => (
             <motion.div
               key={sub.slug}
               variants={itemVariants}

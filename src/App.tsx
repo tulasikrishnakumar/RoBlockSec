@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import LoadingSpinner from './components/ui/LoadingSpinner';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
@@ -12,6 +13,7 @@ const TeamPage = lazy(() => import('./pages/TeamPage'));
 const CareersPage = lazy(() => import('./pages/CareersPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 
 // Main Service Pages
 const RedTeamingPage = lazy(() => import('./pages/services/RedTeamingPage'));
@@ -43,6 +45,7 @@ const CompliancePage = lazy(() => import('./pages/services/grc-services/Complian
 const App: React.FC = () => {
   return (
     <MainLayout>
+      <ScrollToTop />
       <Suspense fallback={<div className="w-full h-screen flex items-center justify-center"><LoadingSpinner /></div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -54,6 +57,7 @@ const App: React.FC = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/products" element={<ProductsPage />} />
 
           {/* Main Service Routes */}
           <Route path="/services/red-teaming" element={<RedTeamingPage />} />

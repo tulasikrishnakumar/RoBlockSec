@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import PageHero from '../ui/PageHero';
 import FAQ from '../shared/FAQ';
-import { Link } from 'react-router-dom';
+
 import Button from '../ui/Button';
 
 interface SectionProps {

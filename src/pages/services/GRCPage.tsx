@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageHero from '../../components/ui/PageHero';
-import { ALL_SERVICES, FAQ_DATA } from '../../constants';
+import { ALL_SERVICES, FAQ_DATA, COMPLIANCE_LOGOS } from '../../constants';
 import Button from '../../components/ui/Button';
 import { Helmet } from 'react-helmet-async';
 import FAQ from '../../components/shared/FAQ';
@@ -56,6 +56,32 @@ const GRCPage: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Compliance Standards Highlights */}
+        <div className="mt-32">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-display font-bold text-white mb-4">Compliance Frameworks We Support</h2>
+            <p className="text-gray-400">Expert guidance and auditing for global regulatory standards.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            {COMPLIANCE_LOGOS.map((logo) => (
+              <motion.div
+                key={logo.name}
+                whileHover={{ scale: 1.05 }}
+                className="glass-card p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center group hover:border-brand-cyan/50 transition-all"
+              >
+                <div className="text-brand-cyan font-display font-bold text-sm mb-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                  {logo.name}
+                </div>
+                <img 
+                  src={logo.image} 
+                  alt={logo.name} 
+                  className="h-10 w-auto filter grayscale group-hover:grayscale-0 transition-all"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
       <FAQ items={FAQ_DATA['grc-services']} />
     </div>

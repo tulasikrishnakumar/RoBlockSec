@@ -10,25 +10,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-dark':    '#020604', // Very dark green/black
-        'brand-navy':    '#05110a',
-        'brand-navy2':   '#0a1f14',
-        'brand-blue':    '#d97706', // Used for secondary gold
-        'brand-cyan':    '#10b981', // Emerald
-        'brand-cyan2':   '#34d399',
-        'brand-purple':  '#fbbf24', // Gold
-        'brand-purple2': '#f59e0b',
-        'brand-green':   '#10b981',
+        'brand-dark':    '#0d0508', // Very dark purple/black base
+        'brand-navy':    '#160a0e',
+        'brand-navy2':   '#200f16',
+        'brand-blue':    '#c43e00', // Used for secondary deep orange
+        'brand-cyan':    '#E85000', // Primary Orange (from logo)
+        'brand-cyan2':   '#ff6a1a', // Lighter orange
+        'brand-purple':  '#7B3FA0', // Primary Purple (from logo)
+        'brand-purple2': '#9955c0', // Lighter purple
+        'brand-green':   '#E85000', // Mapped to orange
         'brand-red':     '#ef4444',
-        'brand-glow':    'rgba(16, 185, 129, 0.25)',
-        'brand-glow2':   'rgba(251, 191, 36, 0.25)',
-        'glass':         'rgba(5, 17, 10, 0.70)',
-        'glass2':        'rgba(10, 31, 20, 0.85)',
+        'brand-glow':    'rgba(232, 80, 0, 0.25)',
+        'brand-glow2':   'rgba(123, 63, 160, 0.25)',
+        'glass':         'rgba(22, 10, 14, 0.70)',
+        'glass2':        'rgba(32, 15, 22, 0.85)',
         // Light theme
-        'light-bg':      '#f0fdf4',
+        'light-bg':      '#fff5f0',
         'light-text':    '#1c1917',
         'light-card':    '#ffffff',
-        'light-border':  '#d1fae5',
+        'light-border':  '#ffd4bb',
       },
       fontFamily: {
         sans:    ['Inter', ...fontFamily.sans],
@@ -55,21 +55,21 @@ export default {
       },
       keyframes: {
         glow: {
-          '0%':   { textShadow: '0 0 10px #10b981, 0 0 20px #10b981', color: '#10b981' },
-          '50%':  { textShadow: '0 0 20px #10b981, 0 0 40px #fbbf24, 0 0 60px #fbbf24', color: '#fbbf24' },
-          '100%': { textShadow: '0 0 10px #fbbf24, 0 0 20px #fbbf24', color: '#fbbf24' },
+          '0%':   { textShadow: '0 0 10px #E85000, 0 0 20px #E85000', color: '#E85000' },
+          '50%':  { textShadow: '0 0 20px #E85000, 0 0 40px #7B3FA0, 0 0 60px #7B3FA0', color: '#9955c0' },
+          '100%': { textShadow: '0 0 10px #7B3FA0, 0 0 20px #7B3FA0', color: '#7B3FA0' },
         },
         'glow-purple': {
-          '0%':   { textShadow: '0 0 10px #fbbf24, 0 0 20px #fbbf24' },
-          '100%': { textShadow: '0 0 20px #10b981, 0 0 40px #10b981' },
+          '0%':   { textShadow: '0 0 10px #7B3FA0, 0 0 20px #7B3FA0' },
+          '100%': { textShadow: '0 0 20px #E85000, 0 0 40px #E85000' },
         },
         'subtle-glow': {
-          'from': { boxShadow: '0 0 10px -2px #10b98155, inset 0 0 10px -2px #10b98133' },
-          'to':   { boxShadow: '0 0 20px 4px #fbbf2455, inset 0 0 20px 4px #fbbf2433' },
+          'from': { boxShadow: '0 0 10px -2px #E8500055, inset 0 0 10px -2px #E8500033' },
+          'to':   { boxShadow: '0 0 20px 4px #7B3FA055, inset 0 0 20px 4px #7B3FA033' },
         },
         'border-glow': {
-          'from': { borderColor: 'rgba(16,185,129,0.5)' },
-          'to':   { borderColor: 'rgba(251,191,36,0.7)' },
+          'from': { borderColor: 'rgba(232,80,0,0.5)' },
+          'to':   { borderColor: 'rgba(123,63,160,0.7)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
@@ -93,7 +93,7 @@ export default {
         },
         'grid-move': {
           '0%':   { backgroundPosition: '0 0' },
-          '100%': { backgroundPosition: '100px 173.2px' }, // specific for hexagons
+          '100%': { backgroundPosition: '100px 173.2px' },
         },
         'shimmer': {
           '0%':   { backgroundPosition: '-1200px 0' },
@@ -105,18 +105,18 @@ export default {
         },
       },
       boxShadow: {
-        'neon-cyan':   '0 0 25px rgba(16,185,129,0.5), 0 0 80px rgba(16,185,129,0.15)',
-        'neon-purple': '0 0 25px rgba(251,191,36,0.5), 0 0 80px rgba(251,191,36,0.15)',
-        'neon-sm':     '0 0 12px rgba(16,185,129,0.4)',
+        'neon-cyan':   '0 0 25px rgba(232,80,0,0.5), 0 0 80px rgba(232,80,0,0.15)',
+        'neon-purple': '0 0 25px rgba(123,63,160,0.5), 0 0 80px rgba(123,63,160,0.15)',
+        'neon-sm':     '0 0 12px rgba(232,80,0,0.4)',
         'card':        '0 8px 40px rgba(0,0,0,0.8), 0 1px 0 rgba(255,255,255,0.08) inset',
       },
       backgroundImage: {
-        'cyber-grid':       'url("data:image/svg+xml,%3Csvg width=\'50\' height=\'86.6\' viewBox=\'0 0 50 86.6\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M25 0l25 14.43v28.86L25 57.73 0 43.3V14.44zM25 86.6l25-14.43V43.31L25 28.87 0 43.3v28.87z\' stroke=\'rgba(16,185,129,0.15)\' stroke-width=\'1\' fill=\'none\'/%3E%3C/svg%3E")',
-        'hero-gradient':    'radial-gradient(circle 800px at 50% 0%, rgba(251,191,36,0.15) 0%, rgba(16,185,129,0.08) 40%, transparent 80%)',
-        'card-gradient':    'linear-gradient(145deg, rgba(10,31,20,0.95) 0%, rgba(5,17,10,0.98) 100%)',
-        'shimmer-gradient': 'linear-gradient(90deg, transparent 0%, rgba(16,185,129,0.1) 50%, transparent 100%)',
-        'cyan-purple':      'linear-gradient(135deg, #10b981 0%, #fbbf24 100%)',
-        'purple-cyan':      'linear-gradient(135deg, #fbbf24 0%, #10b981 100%)',
+        'cyber-grid':       'url("data:image/svg+xml,%3Csvg width=\'50\' height=\'86.6\' viewBox=\'0 0 50 86.6\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M25 0l25 14.43v28.86L25 57.73 0 43.3V14.44zM25 86.6l25-14.43V43.31L25 28.87 0 43.3v28.87z\' stroke=\'rgba(232,80,0,0.15)\' stroke-width=\'1\' fill=\'none\'/%3E%3C/svg%3E")',
+        'hero-gradient':    'radial-gradient(circle 800px at 50% 0%, rgba(123,63,160,0.15) 0%, rgba(232,80,0,0.08) 40%, transparent 80%)',
+        'card-gradient':    'linear-gradient(145deg, rgba(32,15,22,0.95) 0%, rgba(22,10,14,0.98) 100%)',
+        'shimmer-gradient': 'linear-gradient(90deg, transparent 0%, rgba(232,80,0,0.1) 50%, transparent 100%)',
+        'cyan-purple':      'linear-gradient(135deg, #E85000 0%, #7B3FA0 100%)',
+        'purple-cyan':      'linear-gradient(135deg, #7B3FA0 0%, #E85000 100%)',
       },
       backgroundSize: {
         'grid': '50px 86.6px',

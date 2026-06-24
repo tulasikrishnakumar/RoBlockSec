@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceSubPageLayout from '../../../components/layout/ServiceSubPageLayout';
-import { Search, ShieldQuestion, BrainCircuit, CheckSquare, FileText, Code } from 'lucide-react';
+import { Search, ShieldQuestion, BrainCircuit, CheckSquare, Code } from 'lucide-react';
 import { FAQ_DATA } from '../../../constants';
 
 const ThreatIntelligencePage: React.FC = () => {

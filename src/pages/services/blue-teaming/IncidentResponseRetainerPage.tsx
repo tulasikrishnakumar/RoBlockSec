@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceSubPageLayout from '../../../components/layout/ServiceSubPageLayout';
-import { LifeBuoy, ShieldQuestion, BrainCircuit, CheckSquare, FileText, Code } from 'lucide-react';
+import { LifeBuoy, ShieldQuestion, BrainCircuit, CheckSquare, Code } from 'lucide-react';
 import { FAQ_DATA } from '../../../constants';
 
 const IncidentResponseRetainerPage: React.FC = () => {

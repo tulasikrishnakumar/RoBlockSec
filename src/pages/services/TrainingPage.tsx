@@ -66,7 +66,7 @@ const TrainingPage: React.FC = () => {
                 We bridge the gap between academic theory and industry reality. Download our brochures to explore the curriculum and start your journey.
             </p>
             <div className="mt-6 flex justify-center gap-4">
-              <Button href="/Roblocksec_Brochure.pdf" variant="primary" className="gap-2">
+              <Button href="/Roblocksec_Brochure.pdf" variant="primary" className="gap-2" external={true}>
                 <FileText size={18} /> Download Master Brochure
               </Button>
             </div>
@@ -104,13 +104,36 @@ const TrainingPage: React.FC = () => {
                             </ul>
 
                             <div className="flex flex-col sm:flex-row gap-4">
-                              <Button href={course.pdf} variant="primary" className="flex-1 text-center justify-center" target="_blank">View Curriculum</Button>
+                              <Button href={course.pdf} variant="primary" className="flex-1 text-center justify-center" external={true}>View Curriculum</Button>
                               <Button href="/contact" variant="outline" className="flex-1 text-center justify-center">Enroll Now</Button>
                             </div>
                         </div>
                     </div>
                 </motion.div>
             ))}
+        </div>
+
+        {/* Detailed Curriculum Section */}
+        <div className="mt-32 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-display font-bold text-white mb-4">Detailed Training Curriculum</h2>
+            <p className="text-gray-400">Deep dive into the technical modules and learning outcomes of our programmes.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {courses.map((course, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -5 }}
+                className="glass-card p-6 rounded-xl border border-white/5 flex flex-col items-center text-center group hover:border-brand-cyan/50 transition-all"
+              >
+                <div className="w-12 h-12 rounded-lg bg-brand-cyan/10 flex items-center justify-center mb-4 text-brand-cyan">
+                  <FileText size={24} />
+                </div>
+                <h3 className="text-white font-bold mb-4 text-sm">{course.title} Syllabus</h3>
+                <Button href={course.pdf} variant="outline" className="text-xs py-2 px-4" external={true}>Download PDF</Button>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
       

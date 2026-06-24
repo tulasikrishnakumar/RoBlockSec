@@ -79,7 +79,14 @@ const AboutPage: React.FC = () => {
                         transition={{ duration: 0.5 }}
                         className="w-1/2 pr-8 text-right"
                       >
-                        <p className="text-lg font-bold font-display text-white">{item.event}</p>
+                        <p className="text-lg font-bold font-display text-white">
+                          {item.event}
+                          {item.link && (
+                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="ml-2 text-brand-cyan hover:underline text-sm font-normal">
+                              View Project
+                            </a>
+                          )}
+                        </p>
                       </motion.div>
                       <div className="w-1/2 flex justify-start items-center">
                         <div className="z-10 flex items-center justify-center w-24 h-10 rounded-md bg-brand-cyan shadow-lg shadow-brand-cyan/50">
@@ -102,7 +109,14 @@ const AboutPage: React.FC = () => {
                         transition={{ duration: 0.5 }}
                         className="w-1/2 pl-8 text-left"
                       >
-                        <p className="text-lg font-bold font-display text-white">{item.event}</p>
+                        <p className="text-lg font-bold font-display text-white">
+                          {item.event}
+                          {item.link && (
+                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="ml-2 text-brand-cyan hover:underline text-sm font-normal">
+                              View Project
+                            </a>
+                          )}
+                        </p>
                       </motion.div>
                     </>
                   )}
@@ -122,7 +136,14 @@ const AboutPage: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center"
                   >
-                    <p className="text-lg font-bold font-display text-white">{item.event}</p>
+                    <p className="text-lg font-bold font-display text-white">
+                      {item.event}
+                      {item.link && (
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="block mt-1 text-brand-cyan hover:underline text-sm font-normal">
+                          View Project
+                        </a>
+                      )}
+                    </p>
                   </motion.div>
                 </div>
               </div>

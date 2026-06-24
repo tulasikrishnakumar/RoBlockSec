@@ -16,8 +16,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <ShieldCheck className="h-8 w-8 text-brand-cyan" />
-              <span className="text-2xl font-display font-bold text-white">Roblocksec</span>
+              <img src="/RoBlockSec-01.png" alt="RoBlockSec Logo" className="h-8 w-auto object-contain" />
             </Link>
             <p className="text-gray-400 text-sm">Advanced Cybersecurity for the Modern World.</p>
             <div className="flex gap-4 mt-6">

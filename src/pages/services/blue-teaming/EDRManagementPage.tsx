@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceSubPageLayout from '../../../components/layout/ServiceSubPageLayout';
-import { Smartphone, BarChart, BrainCircuit, CheckSquare, FileText, Code } from 'lucide-react';
+import { Smartphone, BarChart, BrainCircuit, CheckSquare, Code } from 'lucide-react';
 import { FAQ_DATA } from '../../../constants';
 
 const EDRManagementPage: React.FC = () => {

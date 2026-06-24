@@ -48,6 +48,19 @@ const JobListing: React.FC<{ job: typeof DEMO_CAREERS[0] }> = ({ job }) => {
 };
 
 const CareersPage: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    position: 'Select Position to Apply For'
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `Job Application: ${formData.position} - ${formData.name}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APosition: ${formData.position}%0D%0A%0D%0APlease attach resume to this email.`;
+    window.location.href = `mailto:hr@roblocksec.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div>
         <PageHero
@@ -80,13 +93,32 @@ const CareersPage: React.FC = () => {
 
             <div id="apply-form" className="max-w-4xl mx-auto mt-20 pt-12 border-t border-brand-cyan/20">
                 <h2 className="text-3xl font-display font-bold text-white text-center mb-8">Apply Now</h2>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-6">
-                        <input type="text" placeholder="Full Name" className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan" />
-                        <input type="email" placeholder="Email Address" className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan" />
+                        <input 
+                          type="text" 
+                          placeholder="Full Name" 
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan" 
+                        />
+                        <input 
+                          type="email" 
+                          placeholder="Email Address" 
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan" 
+                        />
                     </div>
-                    <select className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan text-gray-400">
-                        <option>Select Position to Apply For</option>
+                    <select 
+                      required
+                      value={formData.position}
+                      onChange={(e) => setFormData({...formData, position: e.target.value})}
+                      className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan text-gray-400"
+                    >
+                        <option disabled>Select Position to Apply For</option>
                         {DEMO_CAREERS.map(job => <option key={job.title}>{job.title}</option>)}
                     </select>
                     <div>

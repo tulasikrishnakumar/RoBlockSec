@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceSubPageLayout from '../../../components/layout/ServiceSubPageLayout';
-import { Building, ShieldQuestion, BrainCircuit, CheckSquare, FileText, Users } from 'lucide-react';
+import { Building, BrainCircuit, CheckSquare, FileText, Users } from 'lucide-react';
 import { FAQ_DATA } from '../../../constants';
 
 const GovernancePage: React.FC = () => {

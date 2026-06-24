@@ -1,17 +1,12 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Lock, Zap, Server } from 'lucide-react';
 import Button from '../components/ui/Button';
-import { useTypewriter } from '../hooks/useTypewriter';
-import { ALL_SERVICES, STATS } from '../constants';
+import { STATS } from '../constants';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import { Helmet } from 'react-helmet-async';
 
 const HomePage: React.FC = () => {
-  const typedTagline = useTypewriter("Defend. Detect. Secure.", 80);
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, -100]);
 
   return (
     <div className="overflow-hidden relative bg-brand-dark min-h-screen">
@@ -20,9 +15,8 @@ const HomePage: React.FC = () => {
         <meta name="description" content="Roblocksec: Leading cybersecurity firm specializing in Red Teaming, Blue Teaming, GRC, and Cybersecurity Product Development. Defend. Detect. Secure." />
       </Helmet>
 
-      {/* Abstract Background Elements */}
-      <div className="absolute top-[-10%] left-[-10%] w-1/2 h-1/2 bg-brand-cyan/20 blur-[150px] rounded-full mix-blend-screen pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-1/2 h-1/2 bg-brand-purple/20 blur-[150px] rounded-full mix-blend-screen pointer-events-none" />
+      {/* Minimal grid lines */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(232,80,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(232,80,0,0.03)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
       {/* 10-Years Ahead Spatial Hero Section */}
       <section className="relative min-h-[100vh] flex items-center px-4 md:px-12 lg:px-24 pt-32">
@@ -34,22 +28,21 @@ const HomePage: React.FC = () => {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 z-10"
           >
-            <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-display font-black text-white leading-[0.85] tracking-tighter mix-blend-difference">
-              CYBER
-              <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-cyan to-brand-blue">
-                DEFENSE
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-cyan/20 bg-brand-cyan/5 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
+              <span className="text-xs font-mono text-brand-cyan/70 tracking-widest uppercase">Est. 2024 · Hyderabad, India</span>
+            </div>
+
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black leading-[0.88] tracking-tight">
+              <span className="text-white">Nexalith</span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-orange-400 to-brand-purple">
+                Prime.
               </span>
             </h1>
-            <div className="mt-8 ml-2 flex items-center gap-6">
-               <div className="w-24 h-1 bg-brand-cyan rounded-full animate-pulse-fast"></div>
-               <p className="text-2xl md:text-3xl font-body font-light text-brand-purple tracking-wide">
-                 {typedTagline}<span className="animate-pulse">_</span>
-               </p>
-            </div>
-            
-            <p className="mt-8 max-w-xl text-lg text-gray-400 font-body font-light leading-relaxed">
-              We engineer impenetrable digital fortresses. Next-generation adaptive security architecture deployed for visionary enterprises.
+
+            <p className="mt-6 max-w-lg text-base text-gray-500 font-body leading-relaxed">
+              The unbreakable foundation of next-gen cyber — GRC, IoT, OT, OffSec, DevSec, forensics &amp; beyond. first. strongest. unmatched.
             </p>
             
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -62,41 +55,89 @@ const HomePage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Floating Spatial UI Elements */}
-          <div className="lg:col-span-5 relative h-full min-h-[500px] hidden lg:block">
-             <motion.div style={{ y: y1 }} className="absolute top-10 right-0 w-64 h-64 glass-card rounded-[2.5rem] border border-brand-cyan/30 p-8 shadow-2xl backdrop-blur-2xl group hover:border-brand-cyan transition-all">
-                <div className="w-14 h-14 rounded-full bg-brand-cyan/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Shield className="text-brand-cyan" size={28}/>
+          {/* Animated Cards — Services / Products / Courses */}
+          <div className="lg:col-span-5 hidden lg:flex flex-col gap-4 justify-center pt-20">
+
+            {/* Services Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="glass-card rounded-2xl border border-brand-cyan/20 p-5 hover:border-brand-cyan/50 transition-all group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center">
+                  <Shield className="text-brand-cyan" size={16} />
                 </div>
-                <h3 className="text-white font-display text-xl font-bold">Adaptive Shield</h3>
-                <p className="text-gray-400 text-sm mt-2">Real-time threat mitigation network active.</p>
-             </motion.div>
-             
-             <motion.div style={{ y: y2 }} className="absolute top-64 left-10 w-72 glass-card rounded-[2.5rem] border border-brand-purple/30 p-8 shadow-2xl backdrop-blur-3xl z-20 group hover:border-brand-purple transition-all">
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-white font-display text-xl font-bold">System Status</h3>
-                  <div className="w-3 h-3 rounded-full bg-brand-cyan animate-ping"></div>
+                <span className="text-xs font-mono text-brand-cyan/60 uppercase tracking-widest">Services</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Red Teaming', 'Blue Teaming', 'GRC', 'IoT Security', 'OT Security', 'DevSecOps', 'Digital Forensics', 'Threat Intel'].map((s) => (
+                  <span key={s} className="text-xs px-2 py-1 rounded-full border border-white/10 text-gray-400 group-hover:border-brand-cyan/30 transition-colors">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Products Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="glass-card rounded-2xl border border-brand-purple/20 p-5 hover:border-brand-purple/50 transition-all group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-brand-purple/10 flex items-center justify-center">
+                  <Zap className="text-brand-purple" size={16} />
                 </div>
-                <div className="space-y-4">
-                   <div className="h-3 w-full bg-black/50 rounded-full overflow-hidden shadow-inner">
-                     <motion.div 
-                       initial={{ width: 0 }}
-                       animate={{ width: "92%" }}
-                       transition={{ duration: 1.5, delay: 0.5 }}
-                       className="h-full bg-brand-cyan relative"
-                     ></motion.div>
-                   </div>
-                   <div className="h-3 w-full bg-black/50 rounded-full overflow-hidden shadow-inner">
-                     <motion.div 
-                       initial={{ width: 0 }}
-                       animate={{ width: "85%" }}
-                       transition={{ duration: 1.5, delay: 0.7 }}
-                       className="h-full bg-brand-purple relative"
-                     ></motion.div>
-                   </div>
+                <span className="text-xs font-mono text-brand-purple/60 uppercase tracking-widest">Products</span>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { name: 'Data Rakshak', tag: 'Data Privacy Platform' },
+                  { name: 'BreachSimu', tag: 'Attack Simulation' },
+                  { name: 'CTF Platform', tag: 'Bug Bounty · 2026' },
+                ].map((p) => (
+                  <div key={p.name} className="flex items-center justify-between">
+                    <span className="text-sm text-white font-medium">{p.name}</span>
+                    <span className="text-xs text-gray-500">{p.tag}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Courses Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.7 }}
+              className="glass-card rounded-2xl border border-orange-500/20 p-5 hover:border-orange-500/40 transition-all group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                  <Lock className="text-orange-400" size={16} />
                 </div>
-             </motion.div>
+                <span className="text-xs font-mono text-orange-400/60 uppercase tracking-widest">Courses</span>
+                <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400">Live</span>
+              </div>
+              <div className="space-y-2">
+                {[
+                  'Offensive Security Specialist',
+                  'Certified SOC Analyst',
+                  'Cyber Crime Investigation & DF',
+                  'Cyber Product Development',
+                ].map((c) => (
+                  <div key={c} className="flex items-center gap-2">
+                    <div className="w-1 h-1 rounded-full bg-orange-400/60" />
+                    <span className="text-xs text-gray-400">{c}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
+
         </div>
       </section>
 

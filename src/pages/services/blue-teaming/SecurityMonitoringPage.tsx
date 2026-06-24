@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceSubPageLayout from '../../../components/layout/ServiceSubPageLayout';
-import { Eye, ShieldQuestion, BrainCircuit, CheckSquare, FileText, Code } from 'lucide-react';
+import { Eye, BrainCircuit, CheckSquare, FileText, Code } from 'lucide-react';
 import { FAQ_DATA } from '../../../constants';
 
 const SecurityMonitoringPage: React.FC = () => {
