@@ -1,0 +1,10 @@
+{
+  "experimentalServices": {
+    "roblocksec-frontend": {
+      "type": "web",
+      "routePrefix": "/",
+      "framework": "vite",
+      "buildCommand": "npm install && npm run build"
+    }
+  }
+}
